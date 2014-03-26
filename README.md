@@ -1,4 +1,4 @@
-sodoku-generator
+Sodoku Generator
 ================
 
-Digging Holes for generate different Sodokus
+Digging Holes for generate different Sudokus with many levels of difficulty 
