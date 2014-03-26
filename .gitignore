@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/generator/nbproject/private/
+/generator/build/
