@@ -5,11 +5,25 @@ package generator;
  */
 public class Generator {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    private int level; 
+    
+    public Generator(){
+        setLevel(1);
     }
     
+    public Generator(int level){
+        setLevel(level);
+    }
+    
+    public void setLevel(int level){
+        if(level >= 1 && level <= 5){
+            this.level = level;
+        }else{
+            this.level = 1;
+        }
+    }
+    
+    public int getLevel(){
+        return this.level;
+    }
 }
