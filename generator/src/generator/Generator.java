@@ -68,4 +68,36 @@ public class Generator {
     public int getLevel(){
         return this.level;
     }
+    
+    /**
+     * Using the first sequence for the first level, the sequence is as follows
+     * from left to right and from top to bottom
+     */
+    private void extremelyEasySequence(){   
+        // Fixed length for both sides.
+        int length = board.length;
+        for(int i = 0; i < length; i++){
+            for(int j = 0; j < length; j++){
+            }
+        }
+    }
+    /**
+     * Using this sequence to generate easy level. The sequences is as follows
+     * jumping one cell at the time if it's in the last column jumps one cell
+     * down in the current row.
+     */
+    private void easySequence(){
+        // Fixed length
+        int length = board.length;
+        int j = 0; 
+        for(int i = 0; i < length; i++){
+            if(j == 0){
+                for(j = 0; j < length; j++){
+                }
+            }else{
+                for(j = length - 1; j >= 0; j--){
+                }
+            }
+        }
+    }
 }
