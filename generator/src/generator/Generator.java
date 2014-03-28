@@ -29,7 +29,7 @@ public class Generator {
     
     /**
      * Constructor that takes allows to the user set the level for the board.
-     * @param   int level   the level of the game [1-5]
+     * @param level the level of the game [1-5]
      */
     public Generator(int level){
         newBoard();
