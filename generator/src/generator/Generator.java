@@ -43,6 +43,10 @@ public class Generator {
         board = new int[9][9];
     }
     
+    public int[][] getBoard(){
+        return board;
+    }
+    
     /**
      * Set the current level at any time.
      * @param level 

@@ -67,4 +67,29 @@ public class GeneratorTest {
         Generator rightLevel = new Generator(5);
         assertEquals(level, rightLevel.getLevel());
     }
+    
+    /**
+     * Test board when the board is created.
+     */
+    @Test
+    public void testGetBoard(){ 
+        System.out.println("Test board with the default constructor");
+        Generator instance = new Generator();
+        int fakeBoard[][] = { 
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0}
+        };
+        assertArrayEquals(fakeBoard, instance.getBoard());        
+
+        System.out.println("Test board using the second constructor, with the level as a parameter");
+        instance = new Generator(10);
+        assertArrayEquals(fakeBoard, instance.getBoard());
+    }
 }
