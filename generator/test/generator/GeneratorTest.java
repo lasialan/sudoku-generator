@@ -23,7 +23,6 @@ public class GeneratorTest {
     public GeneratorTest() {
         instance = new Generator();
     }
-    
     /**
      * Test of setLevel method, of class Generator.
      */
