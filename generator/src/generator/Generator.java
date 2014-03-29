@@ -43,6 +43,10 @@ public class Generator {
         board = new int[9][9];
     }
     
+    /**
+     * Return the board at any time.
+     * @return int[][] The board of 9x9
+     */
     public int[][] getBoard(){
         return board;
     }
@@ -99,5 +103,34 @@ public class Generator {
                 }
             }
         }
+    }
+    
+    /**
+     * Override the natural behavior of toString to print te board as it should
+     * be look like, at least something more easy to understand, just for debug
+     * purpose 
+     * @return 
+     */
+    @Override
+    public String toString(){
+        String boardString = "";
+        int length = board.length;
+        
+        for(int i = 0; i < length; i++){
+            if(i % 3 == 0){
+                boardString += "====================\n";
+            }
+            for(int j = 0; j < length; j++){
+                if(j% 3 == 0 ){
+                    boardString += " | ";
+                }
+                boardString += Integer.toString(board[i][j]); 
+            }
+            boardString += "|";
+            boardString += "\n";
+        }
+        boardString += "====================\n";
+        
+        return boardString; 
     }
 }
