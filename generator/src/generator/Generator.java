@@ -6,6 +6,7 @@ package generator;
 public class Generator {
     // Board of the game 9x9.
     private int[][] board;
+    private final int length; 
     /**
      * Differnt levels for the game as follows:
      * No.  Name
@@ -24,6 +25,7 @@ public class Generator {
      */
     public Generator(){
         newBoard();
+        length = board.length;
         setLevel(1);
     }
     
@@ -33,6 +35,7 @@ public class Generator {
      */
     public Generator(int level){
         newBoard();
+        length = board.length;
         setLevel(level);
     }
     
@@ -77,22 +80,18 @@ public class Generator {
      * Using the first sequence for the first level, the sequence is as follows
      * from left to right and from top to bottom
      */
-    private void extremelyEasySequence(){   
-        // Fixed length for both sides.
-        int length = board.length;
+    private void sequence1(){   
         for(int i = 0; i < length; i++){
             for(int j = 0; j < length; j++){
             }
         }
     }
     /**
-     * Using this sequence to generate easy level. The sequences is as follows
-     * jumping one cell at the time if it's in the last column jumps one cell
-     * down in the current row.
+     * Second sequence. The sequences is as follows
+     * Wandering along "S", at the time if it's in the last column jumps one cell
+     * down in the current row, and follows from right to left.
      */
-    private void easySequence(){
-        // Fixed length
-        int length = board.length;
+    private void sequence2(){
         int j = 0; 
         for(int i = 0; i < length; i++){
             if(j == 0){
@@ -105,6 +104,30 @@ public class Generator {
         }
     }
     
+    /**
+     * Third sequence. The sequence is as follows
+     * Jumping one cell at the time, this means for example: 0,3,5,7.
+     */
+    private void sequence3(){
+        for(int i = 0; i < length; i++){
+            if(i % 2 == 0){
+                for(int j = 0, k = 1; j < length; j += 2, k += 2){
+                    board[i][j] = 0; 
+                    if(k < length){
+                        board[i][k] = 0;
+                    }
+                }
+            }else{ 
+                for(int j = length - 2, k = length - 1; j >= 0; j -= 2, k -= 2){
+                    board[i][j] = 0;
+                    if(k >= 0){
+                        board[i][k] = 0;
+                    }
+                }
+            }
+        }    
+    }
+
     /**
      * Override the natural behavior of toString to print te board as it should
      * be look like, at least something more easy to understand, just for debug
